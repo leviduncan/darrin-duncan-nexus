@@ -71,9 +71,9 @@ const Experience = () => {
           </div>
 
           {/* Timeline */}
-          <div className="relative">
+          <div className="relative pl-8 md:pl-0">
             {/* Center Line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-accent to-secondary" />
+            <div className="absolute left-3 md:left-1/2 md:transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-accent to-secondary" />
 
             {/* Experience Items */}
             <div className="space-y-12">
@@ -86,11 +86,11 @@ const Experience = () => {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="hidden md:block absolute left-1/2 top-6 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow-sm animate-glow-pulse" />
+                  <div className="absolute left-3 md:left-1/2 top-6 transform -translate-x-1/2 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow-sm animate-glow-pulse" />
 
                   {/* Content Card */}
-                  <div className={`glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 group ${
-                    exp.side === "left" ? "md:mr-8" : "md:ml-8"
+                  <div className={`glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 group ml-4 ${
+                    exp.side === "left" ? "md:mr-8 md:ml-0" : "md:ml-8"
                   }`}>
                     {/* Company & Role */}
                     <div className="space-y-2 mb-4">
