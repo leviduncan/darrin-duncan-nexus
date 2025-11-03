@@ -92,7 +92,7 @@ const Skills = () => {
                     <div className={`w-12 h-12 rounded-lg ${category.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <Icon className={`w-6 h-6 ${category.color}`} />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground font-bebas">{category.title}</h3>
+                    <h3 className="text-2xl text-foreground font-bebas">{category.title}</h3>
                   </div>
 
                   {/* Skills List */}
