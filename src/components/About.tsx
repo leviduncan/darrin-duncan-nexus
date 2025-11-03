@@ -21,21 +21,36 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6 animate-fade-in">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Highly accomplished <span className="text-primary font-semibold">Sr. Front-End Developer</span> with 
-                15+ years of experience driving user-centric web application design and development.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Proven track record of delivering significant improvements in user engagement and conversion 
-                rates through expertise in <span className="text-primary font-semibold">JavaScript, React.js, TypeScript</span> and 
-                modern front-end technologies.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Skilled in leveraging <span className="text-primary font-semibold">AI-powered tools</span> to 
-                enhance development efficiency and innovation.
-              </p>
+            {/* Avatar & Text Content */}
+            <div className="space-y-8 animate-fade-in">
+              {/* Professional Avatar */}
+              <div className="flex justify-center md:justify-start">
+                <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 shadow-glow-lg animate-glow-pulse group">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Darrin Duncan"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                </div>
+              </div>
+
+              {/* Professional Summary */}
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Highly accomplished <span className="text-primary font-semibold">Sr. Front-End Developer</span> with 
+                  15+ years of experience driving user-centric web application design and development.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Proven track record of delivering significant improvements in user engagement and conversion 
+                  rates through expertise in <span className="text-primary font-semibold">JavaScript, React.js, TypeScript</span> and 
+                  modern front-end technologies.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Skilled in leveraging <span className="text-primary font-semibold">AI-powered tools</span> to 
+                  enhance development efficiency and innovation.
+                </p>
+              </div>
             </div>
 
             {/* Stats Grid */}

@@ -1,28 +1,25 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Info } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Built a modern e-commerce platform with React and TypeScript, increasing conversion rates by 30%",
-      tags: ["React", "TypeScript", "Tailwind", "Stripe"],
-      link: "#",
-      github: "#",
+      title: "Book Tracker Dashboard",
+      description: "Modern web application for tracking reading progress, managing book collections, and discovering new books",
+      tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Query", "Recharts"],
+      link: "https://booktracker.darrinduncan.com/",
     },
     {
-      title: "AI-Powered Dashboard",
-      description: "Developed an intelligent analytics dashboard leveraging AI for predictive insights and data visualization",
-      tags: ["React", "AI/ML", "D3.js", "Node.js"],
-      link: "#",
-      github: "#",
+      title: "Agile Poker Planning App",
+      description: "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Socket.io", "localStorage"],
+      link: "https://agilepoker.darrinduncan.com/",
     },
     {
-      title: "SaaS Application",
-      description: "Created a scalable SaaS platform serving 12,000+ active users with 95% uptime",
-      tags: ["React", "Next.js", "PostgreSQL", "AWS"],
-      link: "#",
-      github: "#",
+      title: "Mindwave Binaural App",
+      description: "Science-informed productivity app that helps users enter different mental states by playing binaural frequencies",
+      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      link: "https://mindwave.darrinduncan.com/",
     },
   ];
 
@@ -46,10 +43,20 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 animate-fade-in group"
+                className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in group border-2 border-transparent hover:border-primary/50"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="space-y-4">
+                {/* Project Image Placeholder with Hover Zoom */}
+                <div className="aspect-video bg-muted/20 overflow-hidden relative">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                <div className="p-6 space-y-4">
                   {/* Project Title */}
                   <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
@@ -82,18 +89,18 @@ const Projects = () => {
                     >
                       <a href={project.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:rotate-45 transition-transform" />
-                        View
+                        View Live Site
                       </a>
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                      className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Info className="w-4 h-4 mr-2" />
+                        Learn More
                       </a>
                     </Button>
                   </div>

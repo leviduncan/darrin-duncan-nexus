@@ -1,7 +1,43 @@
-import { Mail, Phone, MapPin, Linkedin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, ExternalLink, Send, Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setIsSubmitting(false);
+    }, 1500);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -83,22 +119,89 @@ const Contact = () => {
             })}
           </div>
 
-          {/* CTA */}
-          <div className="text-center glass-card p-8 rounded-xl animate-fade-in">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-            <p className="text-muted-foreground mb-6">
-              Let's collaborate and create something amazing together.
-            </p>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6"
-              asChild
-            >
-              <a href="mailto:darrin@darrinduncan.com">
-                <Mail className="mr-2" />
-                Get In Touch
-              </a>
-            </Button>
+          {/* Contact Form */}
+          <div className="glass-card p-8 rounded-xl animate-fade-in">
+            <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Input */}
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-foreground">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="Your name"
+                />
+              </div>
+
+              {/* Email Input */}
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              {/* Subject Input */}
+              <div className="space-y-2">
+                <Label htmlFor="subject" className="text-foreground">Subject</Label>
+                <Input
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="What's this about?"
+                />
+              </div>
+
+              {/* Message Textarea */}
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-foreground">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                size="lg"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg py-6 group"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="mr-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    Send Message
+                  </>
+                )}
+              </Button>
+            </form>
           </div>
         </div>
       </div>
