@@ -58,7 +58,7 @@ const Projects = () => {
 
                 <div className="p-6 space-y-4">
                   {/* Project Title */}
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors font-bebas">
+                  <h3 className="text-2xl text-foreground group-hover:text-primary transition-colors font-bebas">
                     {project.title}
                   </h3>
 
