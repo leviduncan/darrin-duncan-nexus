@@ -8,7 +8,7 @@ const Experience = () => {
       period: "May 2025 - Present",
       location: "Reading, PA",
       highlight: "Site speed optimization, JavaScript conflict resolution, checkout redesign",
-      side: "right",
+      side: "left",
     },
     {
       company: "Nutrisystem, Inc",
@@ -16,7 +16,7 @@ const Experience = () => {
       period: "Dec 2018 - Feb 2025",
       location: "Fort Washington, PA",
       highlight: "30% boost in engagement, 85% user retention, 12,000+ users",
-      side: "left",
+      side: "right",
     },
     {
       company: "Gateway Ticketing Systems",
@@ -24,7 +24,7 @@ const Experience = () => {
       period: "Apr 2018 - Dec 2018",
       location: "Boyertown, PA",
       highlight: "30% increase in engagement, 95% customer satisfaction",
-      side: "right",
+      side: "left",
     },
     {
       company: "Dynalene, Inc",
@@ -32,7 +32,7 @@ const Experience = () => {
       period: "May 2017 - Apr 2018",
       location: "Whitehall, PA",
       highlight: "40% increase in organic traffic, 25% boost in engagement",
-      side: "left",
+      side: "right",
     },
     {
       company: "Vanguard",
@@ -40,7 +40,7 @@ const Experience = () => {
       period: "Jun 2011 - Oct 2013",
       location: "Valley Forge, PA",
       highlight: "Led digital media production for enterprise-level financial services",
-      side: "right",
+      side: "left",
     },
     {
       company: "Federal Reserve Bank of New York",
@@ -48,7 +48,7 @@ const Experience = () => {
       period: "Jan 1998 - Apr 2006",
       location: "New York, NY",
       highlight: "Pioneered UI design and front-end development for critical financial systems",
-      side: "left",
+      side: "right",
     },
   ];
 
@@ -94,7 +94,7 @@ const Experience = () => {
                   }`}>
                     {/* Company & Role */}
                     <div className="space-y-2 mb-4">
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors font-bebas">
+                      <h3 className="text-2xl text-foreground group-hover:text-primary transition-colors font-bebas">
                         {exp.company}
                       </h3>
                       <div className="flex items-center gap-2 text-primary font-semibold">
