@@ -81,7 +81,7 @@ const Experience = () => {
                 <div
                   key={index}
                   className={`relative animate-fade-in ${
-                    exp.side === "left" ? "md:pr-1/2 md:text-right" : "md:pl-1/2"
+                    exp.side === "left" ? "md:w-[47%] md:mr-auto" : "md:w-[47%] md:ml-auto"
                   }`}
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
