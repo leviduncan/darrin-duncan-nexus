@@ -14,7 +14,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               About <span className="gradient-text">Me</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />

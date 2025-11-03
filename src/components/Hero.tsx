@@ -22,10 +22,10 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-bebas">
               <span className="gradient-text glow-text">Darrin Duncan</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground font-bebas">
               Sr. Front-End Developer
             </h2>
           </div>

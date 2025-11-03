@@ -29,7 +29,7 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -58,7 +58,7 @@ const Projects = () => {
 
                 <div className="p-6 space-y-4">
                   {/* Project Title */}
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors font-bebas">
                     {project.title}
                   </h3>
 

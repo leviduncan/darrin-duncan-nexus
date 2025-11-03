@@ -68,7 +68,7 @@ const Skills = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Technical <span className="gradient-text">Skills</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -92,7 +92,7 @@ const Skills = () => {
                     <div className={`w-12 h-12 rounded-lg ${category.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <Icon className={`w-6 h-6 ${category.color}`} />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+                    <h3 className="text-xl font-bold text-foreground font-bebas">{category.title}</h3>
                   </div>
 
                   {/* Skills List */}

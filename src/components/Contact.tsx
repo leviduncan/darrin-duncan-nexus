@@ -74,7 +74,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Let's <span className="gradient-text">Connect</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -121,7 +121,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="glass-card p-8 rounded-xl animate-fade-in">
-            <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center font-bebas">Send Me a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Input */}

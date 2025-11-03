@@ -61,7 +61,7 @@ const Experience = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Professional <span className="gradient-text">Experience</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -94,7 +94,7 @@ const Experience = () => {
                   }`}>
                     {/* Company & Role */}
                     <div className="space-y-2 mb-4">
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors font-bebas">
                         {exp.company}
                       </h3>
                       <div className="flex items-center gap-2 text-primary font-semibold">
