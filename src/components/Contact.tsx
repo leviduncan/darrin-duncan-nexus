@@ -71,9 +71,7 @@ const Contact = () => {
     <section 
       ref={elementRef}
       id="contact" 
-      className={`py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden"
     >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
@@ -81,7 +79,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Let's <span className="gradient-text">Connect</span>
             </h2>
@@ -98,8 +96,8 @@ const Contact = () => {
               return (
                 <div
                   key={index}
-                  className="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-fade-in group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group"
+                  style={{ animationDelay: `${(index * 100) + 400}ms` }}
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -128,7 +126,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8 rounded-xl animate-fade-in">
+          <div className="glass-card p-8 rounded-xl animate-fade-in opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
             <h3 className="text-2xl font-bold mb-6 text-center font-bebas">Send Me a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">

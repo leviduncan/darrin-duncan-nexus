@@ -65,9 +65,7 @@ const Skills = () => {
     <section 
       ref={elementRef}
       id="skills" 
-      className={`py-24 bg-muted/20 relative overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-24 bg-muted/20 relative overflow-hidden"
     >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-20" />
@@ -75,7 +73,7 @@ const Skills = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Technical <span className="gradient-text">Skills</span>
             </h2>
@@ -92,8 +90,8 @@ const Skills = () => {
               return (
                 <div
                   key={categoryIndex}
-                  className="glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 animate-fade-in group"
-                  style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+                  className="glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group"
+                  style={{ animationDelay: `${(categoryIndex * 100) + 400}ms` }}
                 >
                   {/* Category Header */}
                   <div className="flex items-center gap-3 mb-6">

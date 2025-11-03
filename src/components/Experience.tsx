@@ -58,9 +58,7 @@ const Experience = () => {
     <section 
       ref={elementRef}
       id="experience" 
-      className={`py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden"
     >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-20" />
@@ -68,7 +66,7 @@ const Experience = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Professional <span className="gradient-text">Experience</span>
             </h2>
@@ -88,10 +86,10 @@ const Experience = () => {
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className={`relative animate-fade-in ${
+                  className={`relative animate-fade-in opacity-0 [animation-fill-mode:forwards] ${
                     exp.side === "left" ? "md:w-[47%] md:mr-auto" : "md:w-[47%] md:ml-auto"
                   }`}
-                  style={{ animationDelay: `${index * 0.15}s` }}
+                  style={{ animationDelay: `${(index * 150) + 400}ms` }}
                 >
                   {/* Timeline Dot */}
                   <div className="hidden md:block absolute md:left-1/2 top-6 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow-sm animate-glow-pulse" />

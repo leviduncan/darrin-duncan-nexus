@@ -29,14 +29,12 @@ const Projects = () => {
     <section 
       ref={elementRef}
       id="projects" 
-      className={`py-24 bg-muted/20 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-24 bg-muted/20"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               Featured <span className="gradient-text">Projects</span>
             </h2>
@@ -51,8 +49,8 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in group border-2 border-transparent hover:border-primary/50"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group border-2 border-transparent hover:border-primary/50"
+                style={{ animationDelay: `${(index * 150) + 400}ms` }}
               >
                 {/* Project Image Placeholder with Hover Zoom */}
                 <div className="aspect-video bg-muted/20 overflow-hidden relative">

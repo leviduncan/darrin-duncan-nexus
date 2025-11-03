@@ -21,14 +21,12 @@ const About = () => {
     <section 
       ref={elementRef}
       id="about" 
-      className={`py-24 bg-gradient-to-b from-background to-muted/20 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="py-24 bg-gradient-to-b from-background to-muted/20"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
               About <span className="gradient-text">Me</span>
             </h2>
@@ -37,9 +35,9 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Avatar & Text Content */}
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-8">
               {/* Professional Avatar */}
-              <div className="flex justify-center md:justify-start">
+              <div className="flex justify-center md:justify-start animate-fade-in opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
                 <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 shadow-glow-lg animate-glow-pulse group">
                   <img 
                     src={avatar} 
@@ -51,7 +49,7 @@ const About = () => {
               </div>
 
               {/* Professional Summary */}
-              <div className="space-y-6">
+              <div className="space-y-6 animate-fade-in opacity-0 [animation-delay:600ms] [animation-fill-mode:forwards]">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Highly accomplished <span className="text-primary font-semibold">Sr. Front-End Developer</span> with 
                   15+ years of experience driving user-centric web application design and development.
@@ -75,8 +73,8 @@ const About = () => {
                 return (
                   <div
                     key={index}
-                    className="glass-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="glass-card p-6 rounded-xl hover:scale-105 transition-transform duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards]"
+                    style={{ animationDelay: `${(index * 100) + 800}ms` }}
                   >
                     <div className="flex flex-col items-center text-center space-y-3">
                       <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
