@@ -25,26 +25,26 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
-        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-bebas">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-bebas animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
               <span className="gradient-text glow-text">Darrin Duncan</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground font-bebas">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground font-bebas animate-fade-in opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
               Sr. Front-End Developer
             </h2>
           </div>
 
           {/* Tagline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:600ms] [animation-fill-mode:forwards]">
             15+ Years Building User-Centric Web Experiences
             <br />
             <span className="text-primary font-semibold">React • TypeScript • AI-Powered Development</span>
           </p>
 
           {/* Key Stats */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 py-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 py-6 animate-fade-in opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
             <div className="glass-card px-6 py-4 rounded-lg">
               <div className="text-3xl font-bold gradient-text">
                 <CountUpNumber value="25%" />
@@ -66,7 +66,7 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in opacity-0 [animation-delay:1000ms] [animation-fill-mode:forwards]">
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 group"
