@@ -1,4 +1,5 @@
 import { Code2, Users, Zap, Award } from "lucide-react";
+import avatar from "@/assets/darrin.jpg";
 
 const About = () => {
   const stats = [
@@ -27,7 +28,7 @@ const About = () => {
               <div className="flex justify-center md:justify-start">
                 <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 shadow-glow-lg animate-glow-pulse group">
                   <img 
-                    src="/placeholder.svg" 
+                    src={avatar} 
                     alt="Darrin Duncan"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />

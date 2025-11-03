@@ -12,7 +12,7 @@ const Hero = () => {
           backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.3,
+          opacity: 0.9,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-0" />
