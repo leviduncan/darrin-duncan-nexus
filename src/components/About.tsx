@@ -1,5 +1,11 @@
 import { Code2, Users, Zap, Award } from "lucide-react";
 import avatar from "@/assets/darrin.jpg";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const CountUpNumber = ({ value }: { value: string }) => {
+  const { count, elementRef } = useCountUp(value);
+  return <div ref={elementRef}>{count}</div>;
+};
 
 const About = () => {
   const stats = [
@@ -69,7 +75,7 @@ const About = () => {
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <div className="text-3xl font-bold gradient-text glow-text">
-                        {stat.value}
+                        <CountUpNumber value={stat.value} />
                       </div>
                       <div className="text-sm text-muted-foreground">
                         {stat.label}

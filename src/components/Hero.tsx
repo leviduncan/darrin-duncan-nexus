@@ -1,6 +1,12 @@
 import { Button } from "./ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useCountUp } from "@/hooks/useCountUp";
+
+const CountUpNumber = ({ value }: { value: string }) => {
+  const { count, elementRef } = useCountUp(value);
+  return <div ref={elementRef}>{count}</div>;
+};
 
 const Hero = () => {
   return (
@@ -40,15 +46,21 @@ const Hero = () => {
           {/* Key Stats */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 py-6">
             <div className="glass-card px-6 py-4 rounded-lg">
-              <div className="text-3xl font-bold gradient-text">25%</div>
+              <div className="text-3xl font-bold gradient-text">
+                <CountUpNumber value="25%" />
+              </div>
               <div className="text-sm text-muted-foreground">User Engagement ↑</div>
             </div>
             <div className="glass-card px-6 py-4 rounded-lg">
-              <div className="text-3xl font-bold gradient-text">30%</div>
+              <div className="text-3xl font-bold gradient-text">
+                <CountUpNumber value="30%" />
+              </div>
               <div className="text-sm text-muted-foreground">Conversion Rates ↑</div>
             </div>
             <div className="glass-card px-6 py-4 rounded-lg">
-              <div className="text-3xl font-bold gradient-text">12K+</div>
+              <div className="text-3xl font-bold gradient-text">
+                <CountUpNumber value="12K+" />
+              </div>
               <div className="text-sm text-muted-foreground">Active Users</div>
             </div>
           </div>
