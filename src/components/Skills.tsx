@@ -12,8 +12,10 @@ import {
   Zap,
   Brain
 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Skills = () => {
+  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const skillCategories = [
     {
       title: "Frontend",
@@ -60,7 +62,13 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-muted/20 relative overflow-hidden">
+    <section 
+      ref={elementRef}
+      id="skills" 
+      className={`py-24 bg-muted/20 relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-20" />
       

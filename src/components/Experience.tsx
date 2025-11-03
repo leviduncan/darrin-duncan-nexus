@@ -1,6 +1,8 @@
 import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Experience = () => {
+  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const experiences = [
     {
       company: "Boscov's Department Store",
@@ -53,7 +55,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
+    <section 
+      ref={elementRef}
+      id="experience" 
+      className={`py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-20" />
 

@@ -5,8 +5,10 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -66,7 +68,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
+    <section 
+      ref={elementRef}
+      id="contact" 
+      className={`py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
       

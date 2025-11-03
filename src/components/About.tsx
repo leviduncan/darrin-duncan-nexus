@@ -1,6 +1,7 @@
 import { Code2, Users, Zap, Award } from "lucide-react";
 import avatar from "@/assets/darrin.jpg";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CountUpNumber = ({ value }: { value: string }) => {
   const { count, elementRef } = useCountUp(value);
@@ -8,6 +9,7 @@ const CountUpNumber = ({ value }: { value: string }) => {
 };
 
 const About = () => {
+  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const stats = [
     { icon: Code2, value: "15+", label: "Years Experience" },
     { icon: Zap, value: "30%", label: "Conversion Boost" },
@@ -16,7 +18,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-background to-muted/20">
+    <section 
+      ref={elementRef}
+      id="about" 
+      className={`py-24 bg-gradient-to-b from-background to-muted/20 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

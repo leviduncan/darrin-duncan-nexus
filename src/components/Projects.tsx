@@ -1,7 +1,9 @@
 import { ExternalLink, Info } from "lucide-react";
 import { Button } from "./ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
+  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const projects = [
     {
       title: "Book Tracker Dashboard",
@@ -24,7 +26,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-muted/20">
+    <section 
+      ref={elementRef}
+      id="projects" 
+      className={`py-24 bg-muted/20 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
