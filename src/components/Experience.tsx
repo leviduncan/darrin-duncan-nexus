@@ -86,7 +86,7 @@ const Experience = () => {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-3 md:left-1/2 top-6 transform -translate-x-1/2 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow-sm animate-glow-pulse" />
+                  <div className="hidden md:block absolute md:left-1/2 top-6 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow-sm animate-glow-pulse" />
 
                   {/* Content Card */}
                   <div className={`glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 group ml-4 ${
