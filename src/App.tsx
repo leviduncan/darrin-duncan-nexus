@@ -6,9 +6,34 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+import { useEffect } from 'react';
+import '@n8n/chat/style.css';
+import { createChat } from '@n8n/chat';
+
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    createChat({
+      webhookUrl: 'https://n8n-hyper.onrender.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
+      initialMessages: [
+		'Hello! and welcome.',
+		'Want to know my top skills?'
+	],
+	i18n: {
+		en: {
+			title: 'AI Resume Assistant',
+			subtitle: "Here to help you 24/7.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Go ahead, ask a question...',
+		},
+	},
+	enableStreaming: false,
+    });
+  }, []);
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -22,6 +47,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
