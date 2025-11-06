@@ -164,63 +164,69 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6 text-center font-bebas">Send Me a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Input */}
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="Your name"
-                />
+              {/* Name & Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Name Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-foreground">Name</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="Your name"
+                  />
+                </div>
+
+                {/* Email Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-foreground">Email</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
               </div>
 
-              {/* Email Input */}
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+              {/* Company & Phone Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Company Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="company" className="text-foreground">Company</Label>
+                  <Input
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    required
+                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="Your company name"
+                  />
+                </div>
 
-              {/* Company Input */}
-              <div className="space-y-2">
-                <Label htmlFor="company" className="text-foreground">Company</Label>
-                <Input
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  required
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="Your company name"
-                />
-              </div>
-
-              {/* Phone Input */}
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-foreground">
-                  Phone <span className="text-muted-foreground text-sm">(optional)</span>
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="570-200-5552"
-                />
+                {/* Phone Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-foreground">
+                    Phone <span className="text-muted-foreground text-sm">(optional)</span>
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="570-200-5552"
+                  />
+                </div>
               </div>
 
               {/* Subject Input */}
