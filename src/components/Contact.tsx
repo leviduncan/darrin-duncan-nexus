@@ -17,6 +17,7 @@ const Contact = () => {
     name: "",
     email: "",
     company: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -35,6 +36,7 @@ const Contact = () => {
           name: formData.name,
           email: formData.email,
           company: formData.company,
+          phone: formData.phone,
           subject: formData.subject,
           message: formData.message,
           timestamp: new Date().toISOString(),
@@ -52,7 +54,7 @@ const Contact = () => {
       });
       
       // Clear form on success
-      setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
@@ -202,6 +204,22 @@ const Contact = () => {
                   required
                   className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                   placeholder="Your company name"
+                />
+              </div>
+
+              {/* Phone Input */}
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-foreground">
+                  Phone <span className="text-muted-foreground text-sm">(optional)</span>
+                </Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="570-200-5552"
                 />
               </div>
 
