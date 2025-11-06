@@ -16,6 +16,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    company: "",
     subject: "",
     message: "",
   });
@@ -33,6 +34,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          company: formData.company,
           subject: formData.subject,
           message: formData.message,
           timestamp: new Date().toISOString(),
@@ -50,7 +52,7 @@ const Contact = () => {
       });
       
       // Clear form on success
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", company: "", subject: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
@@ -189,6 +191,20 @@ const Contact = () => {
                 />
               </div>
 
+              {/* Company Input */}
+              <div className="space-y-2">
+                <Label htmlFor="company" className="text-foreground">Company</Label>
+                <Input
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="Your company name"
+                />
+              </div>
+
               {/* Subject Input */}
               <div className="space-y-2">
                 <Label htmlFor="subject" className="text-foreground">Subject</Label>
@@ -211,7 +227,6 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={6}
                   className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                   placeholder="Tell me about your project..."
