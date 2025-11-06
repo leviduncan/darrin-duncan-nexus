@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +29,7 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" className="text-2xl font-bold gradient-text">
-          DD
+          <img src={logo} alt="Logo" className="h-8 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
