@@ -27,6 +27,7 @@ const App = () => {
 			footer: '',
 			getStarted: 'New Conversation',
 			inputPlaceholder: 'Go ahead, ask a question...',
+			closeButtonTooltip: 'Close',
 		},
 	},
 	enableStreaming: false,
