@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const WEBHOOK_URL = "https://n8n-hyper.onrender.com/webhook-test/ceab24f4-d5bd-484e-b24a-f651e425219a";
+const WEBHOOK_URL = "https://n8n-hyper.onrender.com/webhook/email-submission";
 
 const Contact = () => {
   const { isVisible, elementRef } = useScrollAnimation(0.1);

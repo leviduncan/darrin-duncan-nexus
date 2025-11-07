@@ -1,6 +1,9 @@
 import { ExternalLink, Info } from "lucide-react";
 import { Button } from "./ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import bookApp from "@/assets/bookTracker.png";
+import agilePokerApp from "@/assets/agilePokerApp.png";
+import landingPageAuditor from "@/assets/landingPageAuditor.png";
 
 const Projects = () => {
   const { isVisible, elementRef } = useScrollAnimation(0.1);
@@ -10,18 +13,21 @@ const Projects = () => {
       description: "Modern web application for tracking reading progress, managing book collections, and discovering new books",
       tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Query", "Recharts"],
       link: "https://booktracker.darrinduncan.com/",
+      image: bookApp,
     },
     {
       title: "Agile Poker Planning App",
       description: "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
       tags: ["React", "TypeScript", "Tailwind CSS", "Socket.io", "localStorage"],
       link: "https://agilepoker.darrinduncan.com/",
+      image: agilePokerApp,
     },
     {
-      title: "Mindwave Binaural App",
-      description: "Science-informed productivity app that helps users enter different mental states by playing binaural frequencies",
+      title: "Landing Page Auditor",
+      description: "Get comprehensive insights on conversion optimization, UX/UI, SEO, performance, and compliance powered by AI",
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-      link: "https://mindwave.darrinduncan.com/",
+      link: "https://landing-analyzer-plus.lovable.app/",
+      image: landingPageAuditor,
     },
   ];
 
@@ -55,7 +61,7 @@ const Projects = () => {
                 {/* Project Image Placeholder with Hover Zoom */}
                 <div className="aspect-video bg-muted/20 overflow-hidden relative">
                   <img 
-                    src="/placeholder.svg" 
+                    src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
