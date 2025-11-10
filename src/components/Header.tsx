@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Link, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
+import Rez from "@/assets/DarrinDuncanResume.pdf";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,9 +44,9 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+          <a href={Rez} target="_blank" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-2 rounded-md transition-colors duration-300">
             Resume
-          </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -71,9 +72,9 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full">
+              <a href={Rez} target="_blank" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full px-4 py-2 rounded-md transition-colors duration-300">
                 Resume
-              </Button>
+              </a>
             </div>
           </div>
         )}
