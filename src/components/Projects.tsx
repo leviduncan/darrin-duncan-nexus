@@ -24,7 +24,7 @@ const Projects = () => {
     },
     {
       title: "Landing Page Auditor",
-      description: "Get comprehensive insights on conversion optimization, UX/UI, SEO, performance, and compliance powered by AI",
+      description: "Get insights on conversion optimization, UX/UI, SEO, performance, and compliance powered by AI",
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       link: "https://landing-analyzer-plus.lovable.app/",
       image: landingPageAuditor,
