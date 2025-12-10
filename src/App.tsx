@@ -16,7 +16,8 @@ const queryClient = new QueryClient();
 const App = () => {
   useEffect(() => {
     createChat({
-      webhookUrl: 'https://n8n-hyper.onrender.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
+      webhookUrl: 'https://n8n.growclientsai.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
+      // webhookUrl: 'https://n8n-hyper.onrender.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
       initialMessages: [
 		'Hey, Want to know more about Darrin\'s top skills?'
 	],
