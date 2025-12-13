@@ -10,16 +10,20 @@ const Projects = () => {
   const projects = [
     {
       title: "Book Tracker Dashboard",
-      description: "Modern web application for tracking reading progress, managing book collections, and discovering new books",
+      description:
+        "Modern web application for tracking reading progress, managing book collections, and discovering new books",
       tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Query", "Recharts"],
       link: "https://booktracker.darrinduncan.com/",
+      git: "https://booktracker.darrinduncan.com/",
       image: bookApp,
     },
     {
       title: "Agile Poker Planning App",
-      description: "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
+      description:
+        "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
       tags: ["React", "TypeScript", "Tailwind CSS", "Socket.io", "localStorage"],
       link: "https://agilepoker.darrinduncan.com/",
+      git: "https://agilepoker.darrinduncan.com/",
       image: agilePokerApp,
     },
     {
@@ -27,16 +31,29 @@ const Projects = () => {
       description: "Get insights on conversion optimization, UX/UI, SEO, performance, and compliance powered by AI",
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       link: "https://lpa.darrinduncan.com/",
+      git: "https://github.com/leviduncan/landing-analyzer-plus",
       image: landingPageAuditor,
+    },
+    {
+      title: "NutriSchedule",
+      description: "NutriSchedule simplifies booking dietary counseling with expert nutrition professionals.",
+      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      link: "https://ns.darrinduncan.com/",
+      git: "https://github.com/leviduncan/nutriconnect-scheduling",
+      image: NutriconnectScheduling,
+    },
+    {
+      title: "Supply Chain Insights",
+      description: "Interactive dashboard turning supply chain data into actionable insights.",
+      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+      link: "https://sci.darrinduncan.com/",
+      git: "https://github.com/leviduncan/orbweaver-supply-chain-insights",
+      image: SupplyChainInsights,
     },
   ];
 
   return (
-    <section 
-      ref={elementRef}
-      id="projects" 
-      className="py-24 bg-muted/20"
-    >
+    <section ref={elementRef} id="projects" className="py-24 bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -56,12 +73,12 @@ const Projects = () => {
               <div
                 key={index}
                 className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group border-2 border-transparent hover:border-primary/50"
-                style={{ animationDelay: `${(index * 150) + 400}ms` }}
+                style={{ animationDelay: `${index * 150 + 400}ms` }}
               >
                 {/* Project Image Placeholder with Hover Zoom */}
                 <div className="aspect-video bg-muted/20 overflow-hidden relative">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -75,9 +92,7 @@ const Projects = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
@@ -110,7 +125,7 @@ const Projects = () => {
                       className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
                       asChild
                     >
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <a href={project.git} target="_blank" rel="noopener noreferrer">
                         <Info className="w-4 h-4 mr-2" />
                         Learn More
                       </a>
