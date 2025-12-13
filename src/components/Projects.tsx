@@ -1,4 +1,5 @@
-import { ExternalLink, Info } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithubAlt } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import bookApp from "@/assets/bookTracker.png";
@@ -131,7 +132,7 @@ const Projects = () => {
                       asChild
                     >
                       <a href={project.git} target="_blank" rel="noopener noreferrer">
-                        <Info className="w-4 h-4 mr-2" />
+                        <FaGithubAlt className="w-4 h-4 mr-2" />
                         Learn More
                       </a>
                     </Button>
