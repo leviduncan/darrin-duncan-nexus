@@ -4,6 +4,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import bookApp from "@/assets/bookTracker.png";
 import agilePokerApp from "@/assets/agilePokerApp.png";
 import landingPageAuditor from "@/assets/landingPageAuditor.png";
+import nutrischedule from "@/assets/ns.png";
+import supplychain from "@/assets/sci.png";
 
 const Projects = () => {
   const { isVisible, elementRef } = useScrollAnimation(0.1);
@@ -14,7 +16,7 @@ const Projects = () => {
         "Modern web application for tracking reading progress, managing book collections, and discovering new books",
       tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Query", "Recharts"],
       link: "https://booktracker.darrinduncan.com/",
-      git: "https://booktracker.darrinduncan.com/",
+      git: "https://github.com/leviduncan/biblio-balance",
       image: bookApp,
     },
     {
@@ -23,7 +25,7 @@ const Projects = () => {
         "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
       tags: ["React", "TypeScript", "Tailwind CSS", "Socket.io", "localStorage"],
       link: "https://agilepoker.darrinduncan.com/",
-      git: "https://agilepoker.darrinduncan.com/",
+      git: "https://github.com/leviduncan/agile-poker",
       image: agilePokerApp,
     },
     {
@@ -40,7 +42,7 @@ const Projects = () => {
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       link: "https://ns.darrinduncan.com/",
       git: "https://github.com/leviduncan/nutriconnect-scheduling",
-      image: NutriconnectScheduling,
+      image: nutrischedule,
     },
     {
       title: "Supply Chain Insights",
@@ -48,7 +50,7 @@ const Projects = () => {
       tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
       link: "https://sci.darrinduncan.com/",
       git: "https://github.com/leviduncan/orbweaver-supply-chain-insights",
-      image: SupplyChainInsights,
+      image: supplychain,
     },
   ];
 
