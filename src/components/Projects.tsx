@@ -54,6 +54,9 @@ const Projects = () => {
     },
   ];
 
+  // render newest projects first by reversing the array
+  const sortedProjects = [...projects].reverse();
+
   return (
     <section ref={elementRef} id="projects" className="py-24 bg-muted/20">
       <div className="container mx-auto px-4">
@@ -71,7 +74,7 @@ const Projects = () => {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {sortedProjects.map((project, index) => (
               <div
                 key={index}
                 className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group border-2 border-transparent hover:border-primary/50"
