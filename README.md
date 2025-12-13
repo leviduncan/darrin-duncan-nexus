@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# 🚀 Darrin Duncan – Portfolio
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/34ab5830-2a00-426a-844d-c5ea5a372dd9
+This portfolio demonstrates my work as a **Senior Frontend Engineer, Consultant, and Fractional Tech Lead**.  
+I specialize in guiding teams through **frontend modernization, accessibility remediation, and performance audits**, while aligning technical execution with business strategy.  
+My focus is on building scalable, human‑centered applications that make complex data usable, accessible, and engaging.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ About This Project
 
-**Use Lovable**
+This project serves as a showcase of my consulting approach and technical leadership:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/34ab5830-2a00-426a-844d-c5ea5a372dd9) and start prompting.
+- **Frontend Modernization** – React, TypeScript, Next.js, and performance‑driven architecture  
+- **Accessibility & Usability** – WCAG‑compliant interfaces that prioritize inclusivity  
+- **Strategic Leadership** – Fractional tech lead experience driving Agile transformation and product optimization  
+- **Workflow Automation** – Integrations with Stripe, Zapier, Google Apps Script, HighLevel, and n8n  
+- **Visual Storytelling** – Emotionally resonant branding and advanced composition for client‑facing products  
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🤖 Resume AI Bot
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+As part of this portfolio, I built an **AI bot trained on my resume**.  
+It can answer questions about my career, skills, and consulting experience — a live example of how I design **AI‑powered knowledge systems** for real‑world use cases.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This project demonstrates:
 
-Follow these steps:
+- Structuring personal data for conversational AI  
+- Building trust through transparent, interactive resumes  
+- Applying workflow automation and AI integration to practical business problems  
+
+---
+
+## 🛠️ Tech Stack
+
+This portfolio is built with:
+
+- **React + TypeScript** – Modern, scalable front‑end development  
+- **Vite** – Lightning‑fast bundling and dev environment  
+- **Tailwind CSS + shadcn/ui** – Flexible, accessible design system  
+- **Agile Practices** – Iterative delivery, performance audits, and continuous improvement  
+
+---
+
+## ⚙️ Development Setup
+
+Clone the repository and run locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
+## 🌍 Deployment
+This project can be deployed to any modern hosting platform (e.g., Vercel, Netlify, AWS). Simply push changes to your repository and configure your hosting provider for automatic builds.
 
-**Edit a file directly in GitHub**
+## 🔗 Custom Domain
+To connect a custom domain, configure DNS settings with your hosting provider and link it to your deployed project.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/34ab5830-2a00-426a-844d-c5ea5a372dd9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📌 Career Context
+This portfolio reflects my journey from UI/UX design at the Federal Reserve Bank of NY to leading front‑end performance audits at Boscov’s and building AI automation solutions with GrowClientsAI. It highlights my ability to combine technical execution, product strategy, and leadership to deliver measurable business outcomes.
