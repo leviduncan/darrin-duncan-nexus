@@ -1,25 +1,21 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Featured from "@/components/Featured";
+import WhatIDoBest from "@/components/WhatIDoBest";
+import TrustedBy from "@/components/TrustedBy";
+import Testimonial from "@/components/Testimonial"
+import CurrentlyAvailable from "@/components/CurrentlyAvailable";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
+        <WhatIDoBest />
+        <Featured />
+        <TrustedBy />
+        <Testimonial />
+        <CurrentlyAvailable />
       </main>
-      <Footer />
     </div>
   );
 };

@@ -74,11 +74,11 @@ const Skills = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
+            <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
               Technical <span className="gradient-text">Skills</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mt-6 text-xl md:text-2xl">
               Comprehensive expertise across modern web development technologies and tools
             </p>
           </div>

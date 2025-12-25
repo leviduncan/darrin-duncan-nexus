@@ -5,10 +5,9 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import bookApp from "@/assets/bookTracker.png";
 import agilePokerApp from "@/assets/agilePokerApp.png";
 import landingPageAuditor from "@/assets/landingPageAuditor.png";
-import nutrischedule from "@/assets/ns.png";
-import supplychain from "@/assets/sci.png";
+import { Link } from "react-router-dom";
 
-const Projects = () => {
+const Featured = () => {
   const { isVisible, elementRef } = useScrollAnimation(0.1);
   const projects = [
     {
@@ -37,22 +36,6 @@ const Projects = () => {
       git: "https://github.com/leviduncan/landing-analyzer-plus",
       image: landingPageAuditor,
     },
-    {
-      title: "NutriSchedule",
-      description: "NutriSchedule simplifies booking dietary counseling with expert nutrition professionals.",
-      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-      link: "https://ns.darrinduncan.com/",
-      git: "https://github.com/leviduncan/nutriconnect-scheduling",
-      image: nutrischedule,
-    },
-    {
-      title: "Supply Chain Insights",
-      description: "Interactive dashboard turning supply chain data into actionable insights.",
-      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-      link: "https://sci.darrinduncan.com/",
-      git: "https://github.com/leviduncan/orbweaver-supply-chain-insights",
-      image: supplychain,
-    },
   ];
 
   // render newest projects first by reversing the array
@@ -65,7 +48,7 @@ const Projects = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
             <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
-              Featured <span className="gradient-text">Projects</span>
+              Featured <span className="gradient-text">Work</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
             <p className="text-muted-foreground mt-6 text-xl md:text-2xl">
@@ -73,7 +56,7 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Projects Grid */}
+          {/* Featured Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedProjects.map((project, index) => (
               <div
@@ -142,9 +125,21 @@ const Projects = () => {
             ))}
           </div>
         </div>
+        <div className="mt-8 text-center">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn"
+            asChild
+          >
+            <Link to="/projects" rel="noopener noreferrer">
+              View More Projects
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default Featured;

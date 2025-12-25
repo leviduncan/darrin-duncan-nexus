@@ -1,11 +1,12 @@
 import { Mail, Phone, MapPin, Linkedin, ExternalLink, Send, Loader2 } from "lucide-react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Label } from "./ui/label";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroBg from "@/assets/hero-bg2.png";
 
 const WEBHOOK_URL = "https://n8n.growclientsai.com/webhook/email-submission";
 
@@ -106,6 +107,13 @@ const Contact = () => {
       ref={elementRef}
       id="contact" 
       className="py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden"
+              style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top',
+          opacity: 1,
+        }}
     >
       {/* Tech Grid Background */}
       <div className="absolute inset-0 tech-grid opacity-30" />
@@ -114,11 +122,11 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-bebas">
+            <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
               Let's <span className="gradient-text">Connect</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-muted-foreground mt-6 text-lg">
+            <p className="text-muted-foreground mt-6 text-xl md:text-2xl">
               Looking for a skilled Front-End Developer? Let's discuss how I can help bring your project to life.
             </p>
           </div>

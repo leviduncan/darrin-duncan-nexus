@@ -10,6 +10,12 @@ import { useEffect } from 'react';
 import '@n8n/chat/style.css';
 import './App.css';
 import { createChat } from '@n8n/chat';
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +23,6 @@ const App = () => {
   useEffect(() => {
     createChat({
       webhookUrl: 'https://n8n.growclientsai.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
-      // webhookUrl: 'https://n8n-hyper.onrender.com/webhook/9e7393b8-409d-4fdd-895c-6d5f286dcb51/chat',
       initialMessages: [
 		'Hey, Want to know more about Darrin\'s top skills?'
 	],
@@ -41,11 +46,16 @@ const App = () => {
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
