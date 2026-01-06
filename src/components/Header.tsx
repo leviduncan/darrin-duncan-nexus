@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 import logo from "@/assets/logo.png";
-import Rez from "@/assets/DarrinDuncanResume.pdf";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,21 +18,21 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
     { label: "Services", href: "/services" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black" : "bg-transparent py-4"
+        isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent py-2"
       }`}
     >
-      <nav className="container mx-auto px-8 py-4 flex items-center justify-between">
-        <a href="/" className="text-2xl font-bold gradient-text">
-          <img src={logo} alt="Logo" className="h-8 w-auto" />
+      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" className="flex items-center gap-2">
+          <img src={logo} alt="Darrin Duncan" className="h-8 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
@@ -43,15 +42,21 @@ const Header = () => {
               key={item.label}
               to={item.href}
               className={({ isActive }) =>
-                `text-foreground hover:text-primary transition-colors duration-300 font-medium ${isActive ? 'text-primary' : ''}`
+                `text-sm font-medium transition-colors duration-200 ${
+                  isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-          <a href={Rez} target="_blank" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-2 rounded-md transition-colors duration-300">
-            Resume
-          </a>
+          <Button
+            size="sm"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+            asChild
+          >
+            <a href="/contact">Request Audit</a>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -65,21 +70,29 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-black md:hidden animate-fade-in">
+          <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border md:hidden">
             <div className="flex flex-col gap-4 p-6">
               {navItems.map((item) => (
                 <NavLink
                   key={item.label}
                   to={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors duration-200 ${
+                      isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`
+                  }
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </NavLink>
               ))}
-              <a href={Rez} target="_blank" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold w-full px-4 py-2 rounded-md transition-colors duration-300">
-                Resume
-              </a>
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium w-full"
+                asChild
+              >
+                <a href="/contact">Request Audit</a>
+              </Button>
             </div>
           </div>
         )}

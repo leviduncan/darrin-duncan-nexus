@@ -2,8 +2,8 @@ import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import WhatIDoBest from "@/components/WhatIDoBest";
 import TrustedBy from "@/components/TrustedBy";
-import Testimonial from "@/components/Testimonial"
-import CurrentlyAvailable from "@/components/CurrentlyAvailable";
+import Testimonial from "@/components/Testimonial";
+import AcceptingEngagements from "@/components/AcceptingEngagements";
 
 const Index = () => {
   return (
@@ -11,10 +11,10 @@ const Index = () => {
       <main>
         <Hero />
         <WhatIDoBest />
-        <Featured />
         <TrustedBy />
         <Testimonial />
-        <CurrentlyAvailable />
+        <Featured />
+        <AcceptingEngagements />
       </main>
     </div>
   );
