@@ -29,7 +29,10 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:200ms]">
-            I help e-commerce and high-traffic teams fix slow, brittle frontend systems—improving Core Web Vitals, checkout stability, and delivery confidence.
+            I help e-commerce and high-traffic teams fix slow, brittle frontend systems, improving Core Web Vitals, checkout stability, and delivery confidence.
+          </p>
+          <p className="text-mlg md:text-xl text-white max-w-3xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:200ms]">
+            For e-commerce and SaaS teams where frontend performance directly impacts revenue.
           </p>
 
           {/* Capability signals */}

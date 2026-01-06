@@ -11,7 +11,7 @@ const Featured = () => {
       title: "E-Commerce Performance Optimization",
       problem: "Major retailer experiencing slow page loads and checkout abandonment on high-traffic days.",
       fix: "Implemented code-splitting, optimized third-party scripts, and added performance monitoring guardrails.",
-      outcome: "Passed Core Web Vitals thresholds and improved checkout completion rates.",
+      outcome: "Passed Core Web Vitals thresholds, reducing performance risk during peak traffic.",
       image: bookApp,
     },
     {

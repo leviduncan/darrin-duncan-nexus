@@ -5,7 +5,7 @@ const WhatIDoBest = () => {
     {
       icon: Zap,
       title: "Performance & CWV Remediation",
-      description: "Diagnose render-blocking bottlenecks, optimize JavaScript execution and asset delivery, and pass Core Web Vitals thresholds.",
+      description: "Identify and remove the specific frontend bottlenecks that cause slow loads, failed interactions, and lost conversions.",
     },
     {
       icon: Shield,
