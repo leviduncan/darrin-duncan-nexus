@@ -19,7 +19,7 @@ function TrustedBy() {
             className="py-24 bg-black relative overflow-hidden glow-2">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Section Header */}
-                    <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
+                    <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards] w-100 md:w-3/4 mx-auto">
                         <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
                             Trusted <span className="gradient-text">By</span>
                         </h2>
