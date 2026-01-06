@@ -30,7 +30,7 @@ const Header = () => {
         isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent py-2"
       }`}
     >
-      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="container mx-auto px-10 py-8 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <img src={logo} alt="Darrin Duncan" className="h-8 w-auto" />
         </a>

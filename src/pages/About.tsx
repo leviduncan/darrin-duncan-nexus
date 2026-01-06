@@ -114,14 +114,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Beyond the Code */}
-          <div className="glass-card p-8 rounded-lg mb-16">
-            <h2 className="text-xl font-semibold text-foreground mb-4">Beyond the Code</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Based in Allentown, Pennsylvania, I work with teams around the world through remote collaboration. When I'm not optimizing frontend systems, I'm exploring AI-powered development tools and contributing to open source projects.
-            </p>
-          </div>
-
           {/* CTA */}
           <div className="text-center">
             <p className="text-muted-foreground mb-6">

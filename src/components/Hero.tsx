@@ -12,7 +12,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 border m-6 rounded-lg">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/30" />
 
@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Main heading */}
           <div className="space-y-4 animate-fade-in opacity-0 [animation-delay:100ms]">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bebas tracking-tight text-foreground">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bebas tracking-tight text-foreground">
               Front-End Architecture &<br />
               <span className="text-primary">Performance Consultant</span>
             </h1>
