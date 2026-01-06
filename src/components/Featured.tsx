@@ -1,141 +1,103 @@
-import { ExternalLink } from "lucide-react";
-import { FaGithubAlt } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 import bookApp from "@/assets/bookTracker.png";
 import agilePokerApp from "@/assets/agilePokerApp.png";
 import landingPageAuditor from "@/assets/landingPageAuditor.png";
-import { Link } from "react-router-dom";
 
 const Featured = () => {
-  const { isVisible, elementRef } = useScrollAnimation(0.1);
-  const projects = [
+  const caseStudies = [
     {
-      title: "Book Tracker Dashboard",
-      description:
-        "Modern web application for tracking reading progress, managing book collections, and discovering new books",
-      tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "React Query", "Recharts"],
-      link: "https://booktracker.darrinduncan.com/",
-      git: "https://github.com/leviduncan/biblio-balance",
+      title: "E-Commerce Performance Optimization",
+      problem: "Major retailer experiencing slow page loads and checkout abandonment on high-traffic days.",
+      fix: "Implemented code-splitting, optimized third-party scripts, and added performance monitoring guardrails.",
+      outcome: "Passed Core Web Vitals thresholds and improved checkout completion rates.",
       image: bookApp,
     },
     {
-      title: "Agile Poker Planning App",
-      description:
-        "Simple and intuitive online tool for teams to collaboratively estimate effort in software development tasks",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Socket.io", "localStorage"],
-      link: "https://agilepoker.darrinduncan.com/",
-      git: "https://github.com/leviduncan/agile-poker",
+      title: "Checkout Funnel Stability",
+      problem: "Intermittent client-side errors causing cart abandonment during peak traffic.",
+      fix: "Identified DOM conflicts, refactored error-prone interactions, and added comprehensive error tracking.",
+      outcome: "Reduced client-side failures and improved funnel reliability.",
       image: agilePokerApp,
     },
     {
-      title: "Landing Page Auditor",
-      description: "Get insights on conversion optimization, UX/UI, SEO, performance, and compliance powered by AI",
-      tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-      link: "https://lpa.darrinduncan.com/",
-      git: "https://github.com/leviduncan/landing-analyzer-plus",
+      title: "Frontend Architecture Review",
+      problem: "Legacy codebase with tangled dependencies slowing team velocity and causing regressions.",
+      fix: "Conducted architecture audit, created dependency map, and implemented CI/CD guardrails.",
+      outcome: "Improved development velocity and reduced production incidents.",
       image: landingPageAuditor,
     },
   ];
 
-  // render newest projects first by reversing the array
-  const sortedProjects = [...projects].reverse();
-
   return (
-    <section ref={elementRef} id="projects" className="py-24 bg-muted/20">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards] w-100 md:w-3/4 mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
-              Featured <span className="gradient-text">Work</span>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bebas text-foreground mb-4">
+              Featured Case Studies
             </h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-muted-foreground mt-6 text-xl md:text-2xl">
-              Showcasing impactful projects that demonstrate expertise in modern web development
+            <div className="w-16 h-0.5 bg-primary mx-auto mb-6" />
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Real problems solved for e-commerce and high-traffic applications
             </p>
           </div>
 
-          {/* Featured Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sortedProjects.map((project, index) => (
+          {/* Case Studies Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="glass-card rounded-xl overflow-hidden hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group border-2 border-transparent hover:border-primary/50"
-                style={{ animationDelay: `${index * 150 + 400}ms` }}
+                className="glass-card rounded-lg overflow-hidden card-hover"
               >
-                {/* Project Image Placeholder with Hover Zoom */}
-                <div className="aspect-video bg-muted/20 overflow-hidden relative">
+                {/* Image */}
+                <div className="aspect-video bg-muted overflow-hidden">
                   <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    src={study.image}
+                    alt={study.title}
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 <div className="p-6 space-y-4">
-                  {/* Project Title */}
-                  <h3 className="text-2xl text-foreground group-hover:text-primary transition-colors font-bebas">
-                    {project.title}
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {study.title}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full border border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-3 pt-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn"
-                      asChild
-                    >
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:rotate-45 transition-transform" />
-                        View Live Site
-                      </a>
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                      asChild
-                    >
-                      <a href={project.git} target="_blank" rel="noopener noreferrer">
-                        <FaGithubAlt className="w-4 h-4 mr-2" />
-                        View Code
-                      </a>
-                    </Button>
+                  
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <span className="text-primary font-medium">Problem: </span>
+                      <span className="text-muted-foreground">{study.problem}</span>
+                    </div>
+                    <div>
+                      <span className="text-primary font-medium">Fix: </span>
+                      <span className="text-muted-foreground">{study.fix}</span>
+                    </div>
+                    <div>
+                      <span className="text-primary font-medium">Outcome: </span>
+                      <span className="text-muted-foreground">{study.outcome}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-        <div className="mt-8 text-center">
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground group/btn"
-            asChild
-          >
-            <Link to="/projects" rel="noopener noreferrer">
-              View More Projects
-            </Link>
-          </Button>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <Button
+              variant="outline"
+              className="border-border text-foreground hover:bg-muted"
+              asChild
+            >
+              <Link to="/case-studies">
+                View All Case Studies
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -2,66 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Professional Consultant Theme - Calm, High-Trust Design System
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Cyberpunk Dark Theme - Futuristic Portfolio */
-    --background: 220 20% 6%;
-    --foreground: 200 30% 95%;
+    /* Professional Dark Theme - Calm & Trustworthy */
+    --background: 220 15% 8%;
+    --foreground: 210 20% 92%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 200 30% 95%;
+    --card: 220 15% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 200 30% 95%;
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    /* Neon Cyan Primary */
-    --primary: 188 100% 50%;
-    --primary-foreground: 220 20% 6%;
+    /* Muted Indigo Primary - Single Accent Color */
+    --primary: 225 65% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Electric Blue Secondary */
-    --secondary: 220 100% 60%;
-    --secondary-foreground: 200 30% 95%;
+    /* Neutral Secondary */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 92%;
 
-    /* Dark Card Backgrounds */
-    --muted: 220 20% 12%;
-    --muted-foreground: 200 20% 70%;
+    /* Muted Backgrounds */
+    --muted: 220 15% 12%;
+    --muted-foreground: 210 15% 60%;
 
-    /* Magenta Accent */
-    --accent: 300 100% 60%;
-    --accent-foreground: 200 30% 95%;
+    /* Subtle Accent (same family as primary) */
+    --accent: 225 40% 45%;
+    --accent-foreground: 210 20% 92%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 200 30% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 92%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 12%;
-    --ring: 188 100% 50%;
+    /* Softer Borders */
+    --border: 220 15% 18%;
+    --input: 220 15% 14%;
+    --ring: 225 65% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom Design Tokens */
-    --glow-primary: 188 100% 50%;
-    --glow-secondary: 220 100% 60%;
-    --glow-accent: 300 100% 60%;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(188 100% 50% / 0.8), hsl(220 100% 60% / 0.8));
-    --gradient-accent: linear-gradient(135deg, hsl(300 100% 60% / 0.8), hsl(220 100% 60% / 0.8));
-    --gradient-hero: linear-gradient(180deg, hsl(220 20% 6%), hsl(220 30% 10%));
-    
-    /* Shadows & Glows */
-    --shadow-glow-sm: 0 0 20px hsl(var(--glow-primary) / 0.3);
-    --shadow-glow-md: 0 0 40px hsl(var(--glow-primary) / 0.4);
-    --shadow-glow-lg: 0 0 60px hsl(var(--glow-primary) / 0.5);
-    --shadow-glow-accent: 0 0 40px hsl(var(--glow-accent) / 0.4);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Minimal Transitions */
+    --transition-smooth: all 0.2s ease;
   }
 }
 
@@ -81,39 +65,20 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .glow-text {
-    text-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5);
-  }
-
-  .glow-text-accent {
-    text-shadow: 0 0 20px hsl(var(--glow-accent) / 0.5);
-  }
-
+  /* Simplified glass card - minimal, no glow */
   .glass-card {
-    background: hsl(var(--card) / 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.3);
-    box-shadow: 0 8px 32px 0 hsl(220 20% 0% / 0.37);
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border) / 0.5);
   }
 
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Subtle hover effect */
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .gradient-text-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .tech-grid {
-    background-image: 
-      linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px hsl(220 15% 0% / 0.3);
   }
 }
