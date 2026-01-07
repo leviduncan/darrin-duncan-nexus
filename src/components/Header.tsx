@@ -54,7 +54,7 @@ const Header = () => {
             href="https://risk-snapshot.darrinduncan.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-white rounded-sm p-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+            className="border border-gray hover:border-0 hover:bg-primary/90 rounded-md p-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
           >
             Free Risk Snapshot
           </a>
