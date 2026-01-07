@@ -50,6 +50,14 @@ const Header = () => {
               {item.label}
             </NavLink>
           ))}
+          <a
+            href="https://risk-snapshot.darrinduncan.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+          >
+            Free Risk Snapshot
+          </a>
           <Button
             size="sm"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
@@ -86,6 +94,15 @@ const Header = () => {
                   {item.label}
                 </NavLink>
               ))}
+              <a
+                href="https://risk-snapshot.darrinduncan.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Free Risk Snapshot
+              </a>
               <Button
                 size="sm"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium w-full"
