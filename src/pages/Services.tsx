@@ -148,6 +148,28 @@ const Services = () => {
                         </div>
                     </div>
 
+                    {/* Risk Snapshot CTA */}
+                    <div className="glass-card p-8 rounded-lg text-center mt-8">
+                        <p className="text-muted-foreground mb-6">
+                            Not sure where to start? Run a free Frontend Performance & UX Risk Snapshot to identify risk patterns before investing in fixes.
+                        </p>
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="border-primary text-primary hover:bg-primary/10 font-medium px-8"
+                            asChild
+                        >
+                            <a 
+                                href="https://risk-snapshot.darrinduncan.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                            >
+                                Run Free Risk Snapshot
+                                <ArrowRight className="ml-2 w-4 h-4" />
+                            </a>
+                        </Button>
+                    </div>
+
                     {/* CTA */}
                     <div className="mt-16 text-center">
                         <p className="text-muted-foreground mb-6">
