@@ -61,10 +61,10 @@ const About = () => {
             <div className="md:col-span-2 space-y-6">
               <div className="prose prose-invert max-w-none">
                 <p className="text-muted-foreground leading-relaxed">
-                  I've been solving problems on the web since 1998, starting as a UI Designer at the Federal Reserve Bank of New York. Over 15+ years, I've focused on what matters most: building frontend systems that are fast, stable, and maintainable—especially for e-commerce and high-traffic applications where performance directly impacts revenue.
-                </p>
+                  I've been solving problems on the web since 1998, starting as a UI Designer at the Federal Reserve Bank of New York. Over 15+ years, I've focused on what matters most: building frontend systems that are fast, stable, and maintainable, especially for e-commerce and high-traffic applications where performance directly impacts revenue.
+                </p><br />
                 <p className="text-muted-foreground leading-relaxed">
-                  Today, I work with CTOs, VP Engineering, and technical leaders who need someone to diagnose what's actually slowing their site down, stabilize their checkout funnels, and build guardrails that prevent future regressions. I translate between code and business value—because "refactoring the DOM" means nothing to stakeholders, but "improved checkout stability" absolutely does.
+                  Today, I work with CTOs, VP Engineering, and technical leaders who need someone to diagnose what's actually slowing their site down, stabilize their checkout funnels, and build guardrails that prevent future regressions. I translate between code and business value, because "refactoring the DOM" means nothing to stakeholders, but "improved checkout stability" absolutely does.
                 </p>
               </div>
             </div>

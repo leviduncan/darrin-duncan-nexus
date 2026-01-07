@@ -15,6 +15,10 @@
     --card: 220 15% 10%;
     --card-foreground: 210 20% 92%;
 
+    --card-lt: 210 40% 98%;
+    --card-foreground-lt: 220 15% 20%;
+
+
     --popover: 220 15% 10%;
     --popover-foreground: 210 20% 92%;
 
@@ -41,6 +45,8 @@
     --border: 220 15% 18%;
     --input: 220 15% 14%;
     --ring: 225 65% 55%;
+
+    --border-lt: 40 15% 8%;
 
     --radius: 0.5rem;
 
@@ -70,6 +76,12 @@
     background: hsl(var(--card) / 0.8);
     backdrop-filter: blur(8px);
     border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glass-card-lt {
+    background: hsl(var(--card-lt) / 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border-lt));
   }
 
   /* Subtle hover effect */
