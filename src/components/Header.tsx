@@ -43,7 +43,7 @@ const Header = () => {
               to={item.href}
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors duration-200 ${
-                  isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`
               }
             >
@@ -54,15 +54,11 @@ const Header = () => {
             href="https://risk-snapshot.darrinduncan.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+            className="border p-6 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
           >
             Free Risk Snapshot
           </a>
-          <Button
-            size="sm"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-            asChild
-          >
+          <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
             <a href="/contact">Request Audit</a>
           </Button>
         </div>
@@ -86,7 +82,7 @@ const Header = () => {
                   to={item.href}
                   className={({ isActive }) =>
                     `text-sm font-medium transition-colors duration-200 ${
-                      isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                      isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                     }`
                   }
                   onClick={() => setIsMobileMenuOpen(false)}
