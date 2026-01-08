@@ -1,59 +1,20 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileTextIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import bookApp from "@/assets/bookTracker.png";
-import agilePokerApp from "@/assets/agilePokerApp.png";
-import landingPageAuditor from "@/assets/landingPageAuditor.png";
-import nutrischedule from "@/assets/ns.png";
-import supplychain from "@/assets/sci.png";
+import snapshot from "@/assets/snapshot.png";
 import RiskSnapshot from "@/components/RiskSnapshot";
+import Recommend from "@/assets/Darrin_Duncan_Recommendation_Letter.pdf";
 
 const CaseStudies = () => {
   const caseStudies = [
     {
-      title: "E-Commerce Performance Optimization",
-      context: "Major department store retailer with high-traffic e-commerce platform experiencing performance issues during peak shopping periods.",
-      symptoms: "Slow page loads, Core Web Vitals failures, checkout abandonment spikes during sales events.",
-      diagnosis: "Render-blocking third-party scripts, unoptimized JavaScript bundles, inefficient DOM updates, and missing caching strategies.",
-      fixes: "Implemented code-splitting and lazy loading, optimized third-party script loading, added performance monitoring and Lighthouse CI guardrails.",
-      outcome: "Passed Core Web Vitals thresholds, improved checkout completion rates, reduced page load variability during high-traffic periods.",
-      image: bookApp,
-    },
-    {
-      title: "Checkout Funnel Stability Sprint",
-      context: "High-volume e-commerce site with intermittent checkout failures causing revenue loss and customer frustration.",
-      symptoms: "Client-side errors during checkout, cart abandonment, inconsistent behavior across browsers.",
-      diagnosis: "DOM conflicts between legacy code and modern components, race conditions in payment flow, inadequate error handling.",
-      fixes: "Refactored error-prone interactions, implemented comprehensive error tracking, added fallback mechanisms and graceful degradation.",
-      outcome: "Reduced client-side failures, improved funnel reliability, better error visibility for ongoing monitoring.",
-      image: agilePokerApp,
-    },
-    {
-      title: "Frontend Architecture Review",
-      context: "Legacy codebase with accumulated tech debt slowing development velocity and causing production regressions.",
-      symptoms: "Slow feature delivery, frequent production bugs, developer frustration, tangled dependencies.",
-      diagnosis: "Circular dependencies, missing abstraction layers, inadequate testing infrastructure, no CI/CD performance gates.",
-      fixes: "Conducted comprehensive architecture audit, created dependency map, established coding standards, implemented CI/CD guardrails with Lighthouse CI.",
-      outcome: "Improved development velocity, reduced production incidents, clearer ownership and maintainability.",
-      image: landingPageAuditor,
-    },
-    {
-      title: "Customer Scheduling Application",
-      context: "Health and nutrition company needed a customer-facing scheduling system for dietary counseling appointments.",
-      symptoms: "Manual scheduling processes, high no-show rates, poor customer experience, limited visibility into appointment patterns.",
-      diagnosis: "No existing self-service infrastructure, fragmented communication channels, lack of automated reminders.",
-      fixes: "Built modern React-based scheduling application with automated reminders, calendar integration, and analytics dashboard.",
-      outcome: "Strong user adoption and retention, reduced manual scheduling overhead, improved appointment visibility.",
-      image: nutrischedule,
-    },
-    {
-      title: "Supply Chain Dashboard",
-      context: "Manufacturing company needed visibility into supply chain data to identify bottlenecks and optimize operations.",
-      symptoms: "Data silos, manual reporting, delayed insights, difficulty identifying supply chain issues.",
-      diagnosis: "Fragmented data sources, lack of real-time visibility, no centralized dashboard for decision-making.",
-      fixes: "Built interactive dashboard with data visualization, filtering, and real-time updates using React and modern charting libraries.",
-      outcome: "Actionable insights for operations teams, faster identification of supply chain issues, improved decision-making.",
-      image: supplychain,
+      "title": "E-Commerce Performance Stabilization for High-Traffic Retail Platform",
+      "context": "Large department store retailer operating a high-traffic e-commerce platform where frontend performance issues surfaced most severely during peak promotional periods.",
+      "symptoms": "Intermittent slow page loads, Core Web Vitals regressions, and elevated checkout abandonment during high-traffic sales events.",
+      "diagnosis": "Identified render-blocking third-party scripts, oversized JavaScript bundles, inefficient DOM updates under load, and gaps in frontend caching and delivery strategy.",
+      "fixes": "Introduced code-splitting and lazy loading, re-sequenced third-party script execution, and established performance monitoring with Lighthouse CI guardrails to prevent regressions.",
+      "outcome": "Achieved sustained Core Web Vitals compliance, improved checkout completion reliability, and reduced page load variability during peak traffic periods.",
+      image: snapshot,
     },
   ];
 
@@ -122,6 +83,43 @@ const CaseStudies = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Independent Validation */}
+          <div className="glass-card p-8 rounded-lg mt-12">
+            <h2 className="text-2xl font-semibold text-foreground mb-6 text-center">
+              Independent Validation
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="text-white text-xl">
+                  <div className="flex gap-2">
+                    <div>
+                      &mdash;
+                    </div>
+                    <div>
+                      Christoph DeMaskey
+                      <div className="text-lg text-muted-foreground">Director of Software Engineering, Boscov's</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mx-auto">
+              <div className="flex items-start gap-3 mt-4">
+                {/* <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" /> */}
+                <span className="text-white">
+                  <span className="text-2xl font-bebas">“</span>
+                  Darrin is a highly talented JavaScript developer whose depth of knowledge is evident in every project he undertakes. His debugging skills are particularly noteworthy, often identifying and resolving issues others might overlook.
+                  <span className="text-2xl font-bebas">”</span>
+                </span>
+              </div>
+            </div>
+            <div className="text-muted-foreground hover:text-white text-sm mt-4"><a href={Recommend} target="_blank" className="flex">
+              <FileTextIcon size="16" />
+              <span className="px-1">View full recommendation</span>
+            </a>
+            </div>
           </div>
 
           {/* Risk Snapshot CTA */}

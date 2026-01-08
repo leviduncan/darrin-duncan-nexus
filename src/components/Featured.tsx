@@ -1,33 +1,19 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import bookApp from "@/assets/bookTracker.png";
+import snapshot from "@/assets/snapshot2.png";
 import agilePokerApp from "@/assets/agilePokerApp.png";
 import landingPageAuditor from "@/assets/landingPageAuditor.png";
 
 const Featured = () => {
   const caseStudies = [
     {
-      title: "E-Commerce Performance Optimization",
-      problem: "Major retailer experiencing slow page loads and checkout abandonment on high-traffic days.",
-      fix: "Implemented code-splitting, optimized third-party scripts, and added performance monitoring guardrails.",
-      outcome: "Passed Core Web Vitals thresholds, reducing performance risk during peak traffic.",
-      image: bookApp,
-    },
-    {
-      title: "Checkout Funnel Stability",
-      problem: "Intermittent client-side errors causing cart abandonment during peak traffic.",
-      fix: "Identified DOM conflicts, refactored error-prone interactions, and added comprehensive error tracking.",
-      outcome: "Reduced client-side failures and improved funnel reliability.",
-      image: agilePokerApp,
-    },
-    {
-      title: "Frontend Architecture Review",
-      problem: "Legacy codebase with tangled dependencies slowing team velocity and causing regressions.",
-      fix: "Conducted architecture audit, created dependency map, and implemented CI/CD guardrails.",
-      outcome: "Improved development velocity and reduced production incidents.",
-      image: landingPageAuditor,
-    },
+      title: "E-Commerce Performance Stabilization for High-Traffic Retail Platform",
+      problem: "Large department store retailer operating a high-traffic e-commerce platform where frontend performance issues surfaced most severely during peak promotional periods.",
+      fix: "Introduced code-splitting and lazy loading, re-sequenced third-party script execution",
+      outcome: "Achieved sustained Core Web Vitals compliance, improved checkout completion reliability, and reduced page load variability during peak traffic periods.",
+      image: snapshot,
+    }
   ];
 
   return (
@@ -46,11 +32,11 @@ const Featured = () => {
           </div>
 
           {/* Case Studies Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="glass-card rounded-lg overflow-hidden card-hover"
+                className="glass-card rounded-lg overflow-hidden card-hover flex flex-row"
               >
                 {/* Image */}
                 <div className="aspect-video bg-muted overflow-hidden">
