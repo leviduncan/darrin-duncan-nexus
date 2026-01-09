@@ -36,7 +36,7 @@ const Featured = () => {
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="glass-card rounded-lg overflow-hidden card-hover flex flex-row"
+                className="glass-card rounded-lg overflow-hidden card-hover flex md:flex-row flex-col "
               >
                 {/* Image */}
                 <div className="aspect-video bg-muted overflow-hidden">
