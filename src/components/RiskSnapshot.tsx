@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 function RiskSnapshot() {
     return (
         <>
-            <div className="glass-card-lt p-8 rounded-lg text-center mt-12">
+            <div className="glass-card-lt md:p-8 p-4 rounded-lg text-center mt-12">
                 <h2 className="text-2xl font-semibold text-background mb-6 text-center">
                     Not sure where to start? Run a free Frontend Performance & UX Risk Snapshot to identify risk patterns before investing in fixes.
                         </h2>
