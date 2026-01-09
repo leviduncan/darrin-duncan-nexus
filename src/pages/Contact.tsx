@@ -1,25 +1,22 @@
-import { Mail, Phone, MapPin, Linkedin, ExternalLink, Send, Loader2 } from "lucide-react";
+import { Mail, Linkedin, ExternalLink, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroBg from "@/assets/hero-bg2.png";
 
 const WEBHOOK_URL = "https://n8n.growclientsai.com/webhook/email-submission";
 
 const Contact = () => {
-  const { isVisible, elementRef } = useScrollAnimation(0.1);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    phone: "",
-    subject: "",
+    siteUrl: "",
+    biggestIssue: "",
+    timeline: "",
     message: "",
   });
 
@@ -36,12 +33,12 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          company: formData.company,
-          phone: formData.phone,
-          subject: formData.subject,
+          siteUrl: formData.siteUrl,
+          biggestIssue: formData.biggestIssue,
+          timeline: formData.timeline,
           message: formData.message,
           timestamp: new Date().toISOString(),
-          source: 'portfolio_website',
+          source: 'consultant_website',
         }),
       });
 
@@ -50,17 +47,16 @@ const Contact = () => {
       }
 
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Request Sent",
+        description: "Thank you for reaching out. I'll get back to you within 1-2 business days.",
       });
       
-      // Clear form on success
-      setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", siteUrl: "", biggestIssue: "", timeline: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
-        title: "Error Sending Message",
-        description: "Failed to send message. Please try emailing me directly at darrin@darrinduncan.com",
+        title: "Error Sending Request",
+        description: "Please try emailing me directly at darrin@darrinduncan.com",
         variant: "destructive",
       });
     } finally {
@@ -75,122 +71,61 @@ const Contact = () => {
     }));
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "darrin@darrinduncan.com",
-      href: "mailto:darrin@darrinduncan.com",
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "570-200-5552",
-      href: "tel:570-200-5552",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Allentown, PA",
-      href: null,
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "linkedin.com/in/darrinduncan",
-      href: "https://linkedin.com/in/darrinduncan",
-    },
-  ];
-
   return (
-    <section 
-      ref={elementRef}
-      id="contact" 
-      className="py-24 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden"
-              style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'top',
-          opacity: 1,
-        }}
-    >
-      {/* Tech Grid Background */}
-      <div className="absolute inset-0 tech-grid opacity-30" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
+    <section className="py-24 pt-32 bg-background min-h-screen">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
-            <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
-              Let's <span className="gradient-text">Connect</span>
-            </h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-            <p className="text-muted-foreground mt-6 text-xl md:text-2xl">
-              Looking for a skilled Front-End Developer? Let's discuss how I can help bring your project to life.
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bebas text-foreground mb-4">
+              Book a Performance Audit Call
+            </h1>
+            <div className="w-16 h-0.5 bg-primary mx-auto mb-6" />
+            <p className="text-muted-foreground">
+              Let's discuss your frontend challenges and how I can help.
             </p>
           </div>
 
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <div
-                  key={index}
-                  className="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group"
-                  style={{ animationDelay: `${(index * 100) + 400}ms` }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm text-muted-foreground mb-1">{info.label}</div>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1"
-                          target={info.href.startsWith('http') ? '_blank' : undefined}
-                          rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        >
-                          {info.value}
-                          {info.href.startsWith('http') && <ExternalLink className="w-4 h-4" />}
-                        </a>
-                      ) : (
-                        <div className="text-foreground font-medium">{info.value}</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Direct Contact */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
+            <a
+              href="mailto:darrin@darrinduncan.com"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              <span>darrin@darrinduncan.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/darrinduncan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+              <span>LinkedIn</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
 
           {/* Contact Form */}
-          <div className="glass-card p-8 rounded-xl animate-fade-in opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
-            <h3 className="text-2xl font-bold mb-6 text-center font-bebas">Send Me a Message</h3>
-            
+          <div className="glass-card p-4 md:p-8 rounded-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name & Email Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Name Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground">Name</Label>
+                  <Label htmlFor="name" className="text-foreground text-sm">Name</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    className="bg-background border-border focus:border-primary"
                     placeholder="Your name"
                   />
                 </div>
-
-                {/* Email Input */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-foreground">Email</Label>
+                  <Label htmlFor="email" className="text-foreground text-sm">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -198,70 +133,68 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                    placeholder="your.email@example.com"
+                    className="bg-background border-border focus:border-primary"
+                    placeholder="your.email@company.com"
                   />
                 </div>
               </div>
 
-              {/* Company & Phone Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Company Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="company" className="text-foreground">Company</Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                    placeholder="Your company name"
-                  />
-                </div>
-
-                {/* Phone Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-foreground">
-                    Phone <span className="text-muted-foreground text-sm">(optional)</span>
-                  </Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                    placeholder="570-200-5552"
-                  />
-                </div>
-              </div>
-
-              {/* Subject Input */}
+              {/* Site URL */}
               <div className="space-y-2">
-                <Label htmlFor="subject" className="text-foreground">Subject</Label>
+                <Label htmlFor="siteUrl" className="text-foreground text-sm">Site URL</Label>
                 <Input
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                  id="siteUrl"
+                  name="siteUrl"
+                  value={formData.siteUrl}
                   onChange={handleChange}
                   required
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="What's this about?"
+                  className="bg-background border-border focus:border-primary"
+                  placeholder="https://yoursite.com"
                 />
               </div>
 
-              {/* Message Textarea */}
+              {/* Biggest Issue */}
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-foreground">Message</Label>
+                <Label htmlFor="biggestIssue" className="text-foreground text-sm">Biggest Issue</Label>
+                <Input
+                  id="biggestIssue"
+                  name="biggestIssue"
+                  value={formData.biggestIssue}
+                  onChange={handleChange}
+                  required
+                  className="bg-background border-border focus:border-primary"
+                  placeholder="e.g., Slow checkout, Core Web Vitals failures, frequent regressions"
+                />
+              </div>
+
+              {/* Timeline */}
+              <div className="space-y-2">
+                <Label htmlFor="timeline" className="text-foreground text-sm">
+                  Timeline/Urgency <span className="text-muted-foreground">(optional)</span>
+                </Label>
+                <Input
+                  id="timeline"
+                  name="timeline"
+                  value={formData.timeline}
+                  onChange={handleChange}
+                  className="bg-background border-border focus:border-primary"
+                  placeholder="e.g., Before Q4 peak, ASAP, Exploring options"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-foreground text-sm">
+                  Additional Context <span className="text-muted-foreground">(optional)</span>
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={6}
-                  className="bg-background/50 border-muted focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                  placeholder="Tell me about your project..."
+                  rows={4}
+                  className="bg-background border-border focus:border-primary resize-none"
+                  placeholder="Any other details that would help me understand your situation..."
                 />
               </div>
 
@@ -270,17 +203,17 @@ const Contact = () => {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg py-6 group"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="mr-2 animate-spin" />
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" />
                     Sending...
                   </>
                 ) : (
                   <>
-                    <Send className="mr-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    Send Message
+                    <Send className="mr-2 w-4 h-4" />
+                    Request Audit Call
                   </>
                 )}
               </Button>

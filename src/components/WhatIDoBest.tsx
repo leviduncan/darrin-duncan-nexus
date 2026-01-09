@@ -1,76 +1,62 @@
-import {
-    Blocks,
-    Zap,
-    ChartNoAxesCombined
-} from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Zap, Shield, Layers } from "lucide-react";
 
+const WhatIDoBest = () => {
+  const services = [
+    {
+      icon: Zap,
+      title: "Performance & CWV Remediation",
+      description: "Identify and remove the specific frontend bottlenecks that cause slow loads, failed interactions, and lost conversions.",
+    },
+    {
+      icon: Shield,
+      title: "Checkout & Funnel Stability",
+      description: "Reduce client-side failure modes, stabilize critical user interactions, and improve conversion reliability.",
+    },
+    {
+      icon: Layers,
+      title: "Architecture & Delivery Systems",
+      description: "Reduce frontend fragility and tech debt, improve maintainability and team velocity, add guardrails to prevent regressions.",
+    },
+  ];
 
+  return (
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bebas text-foreground mb-4">
+              How I Help
+            </h2>
+            <div className="w-16 h-0.5 bg-primary mx-auto" />
+          </div>
 
-function WhatIDoBest() {
-    const { isVisible, elementRef } = useScrollAnimation(0.1);
-
-    const content = [
-        {
-            title: "Performance Optimization",
-            body: "I identify and fix the technical bottlenecks that slow your site and cost you sales. From JavaScript conflicts to checkout flow issues, I solve the problems that others overlook.",
-            logo: Zap
-        },
-        {
-            title: "Modern Development",
-            body: "I build scalable, maintainable applications with React, TypeScript, and modern front-end tools—or modernize legacy codebases that are holding your team back.",
-            logo: Blocks
-        },
-        {
-            title: "Business Results",
-            body: "I don't just write code. I deliver outcomes that matter: faster sites, higher engagement, more conversions, and measurable ROI.",
-            logo: ChartNoAxesCombined
-        },
-    ]
-
-    return (
-        <section
-            ref={elementRef}
-            id="whatIDo"
-            className="py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden"
-        >
-            {/* Tech Grid Background */}
-            <div className="absolute inset-0 tech-grid opacity-20" />
-
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-6xl mx-auto">
-                    {/* Section Header */}
-                    <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
-                        <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
-                            What I Do <span className="gradient-text">Best</span>
-                        </h2>
-                        <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-                    </div>
-
-                    {/* Skills Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {
-                            content.map((item, index) => {
-                                return (
-                                    <div key={index} className="glass-card p-6 rounded-xl hover:scale-105 hover:shadow-glow-md transition-all duration-300 animate-fade-in opacity-0 [animation-fill-mode:forwards] group glow" style={{ animationDelay: `${200 + (index * 200)}ms` }}>
-                                        {/* Category Header */}
-                                        <div className="flex flex-wrap items-center gap-3 mb-6">
-                                            <div className={`w-12 h-12 rounded-lg bg-transparent flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                                                <item.logo />
-                                            </div>
-                                            <h3 className="text-2xl text-foreground font-bebas text-primary">{item.title}</h3>
-                                        </div>
-                                        <p className="text-lg text-foreground font-medium">{item.body}</p>
-                                    </div>
-                                    )
-                                }
-                            )
-                        }
-                    </div>
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={index}
+                  className="glass-card p-8 rounded-lg card-hover"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-            </div>
-        </section>
-    )
-}
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default WhatIDoBest
+export default WhatIDoBest;

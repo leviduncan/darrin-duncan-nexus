@@ -66,7 +66,7 @@ const Experience = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
+          <div className="text-center mb-16 animate-fade-in opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards] w-100 md:w-3/4 mx-auto">
             <h2 className="text-4xl md:text-5xl mb-4 font-bebas">
               Professional <span className="gradient-text">Experience</span>
             </h2>
