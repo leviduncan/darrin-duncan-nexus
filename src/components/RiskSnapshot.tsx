@@ -15,7 +15,7 @@ function RiskSnapshot() {
                     asChild
                 >
                     <a
-                        href="https://risk-snapshot.darrinduncan.com/"
+                        href="https://rs.darrinduncan.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

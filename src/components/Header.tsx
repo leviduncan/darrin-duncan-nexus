@@ -51,7 +51,7 @@ const Header = () => {
             </NavLink>
           ))}
           <a
-            href="https://risk-snapshot.darrinduncan.com/"
+            href="https://rs.darrinduncan.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-gray hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
@@ -91,7 +91,7 @@ const Header = () => {
                 </NavLink>
               ))}
               <a
-                href="https://risk-snapshot.darrinduncan.com/"
+                href="https://rs.darrinduncan.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full border border-gray hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm text-center font-medium text-primary hover:text-primary/80 transition-colors duration-200"
