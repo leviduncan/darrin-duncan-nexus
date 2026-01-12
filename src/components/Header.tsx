@@ -22,6 +22,8 @@ const Header = () => {
     { label: "Case Studies", href: "/case-studies" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
+    { label: "Free Risk Snapshot", href: "https://rs.darrinduncan.com/" },
+    { label: "Request Audit", href: "/contact" },
   ];
 
   return (
@@ -37,30 +39,49 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.label}
-              to={item.href}
-              className={({ isActive }) =>
-                `text-sm font-medium transition-colors duration-200 ${
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
+{navItems.map((item, index) => {
+        const isLast = index === navItems.length - 1;
+      const isNextToLast = index === navItems.length - 2;
+
+      const baseClasses = "border-gray border hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+
+      if(isNextToLast) {
+        return (
           <a
-            href="https://rs.darrinduncan.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-gray hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+          key={item.label}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={baseClasses}
           >
-            Free Risk Snapshot
+            {item.label}
           </a>
-          <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
-            <a href="/contact">Request Audit</a>
-          </Button>
+        )
+      }
+
+
+return (
+  
+  <NavLink
+    key={item.label}
+    to={item.href}
+    className={({ isActive }) => {
+
+      return `
+        text-sm font-medium transition-colors duration-200
+        ${isActive
+          ? "text-primary"
+          : "text-muted-foreground hover:text-foreground"}
+        ${isLast ? "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium" : ""}
+      `;
+    }}
+    onClick={() => setIsMobileMenuOpen(false)}
+  >
+    {item.label}
+  </NavLink>
+)
+}
+)}
         </div>
 
         {/* Mobile Menu Button */}
@@ -76,36 +97,50 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border md:hidden">
             <div className="flex flex-col gap-4 p-6">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.label}
-                  to={item.href}
-                  className={({ isActive }) =>
-                    `text-sm font-medium transition-colors duration-200 ${
-                      isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                    }`
-                  }
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <a
-                href="https://rs.darrinduncan.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full border border-gray hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm text-center font-medium text-primary hover:text-primary/80 transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Free Risk Snapshot
-              </a>
-              <Button
-                size="sm"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium w-full"
-                asChild
-              >
-                <a href="/contact">Request Audit</a>
-              </Button>
+{navItems.map((item, index) => {
+        const isLast = index === navItems.length - 1;
+      const isNextToLast = index === navItems.length - 2;
+
+      const baseClasses = "border-gray border hover:border-primary hover:bg-primary/90 hover:text-white rounded-md p-2 text-sm text-center font-medium text-primary hover:text-primary/80 transition-colors duration-200"
+
+      if(isNextToLast) {
+        return (
+          <a
+          key={item.label}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={baseClasses}
+          >
+            {item.label}
+          </a>
+        )
+      }
+
+
+return (
+  
+  <NavLink
+    key={item.label}
+    to={item.href}
+    className={({ isActive }) => {
+
+      return `
+        border-gray border p-2 rounded-md text-center text-sm font-medium transition-colors duration-200
+        ${isActive
+          ? "text-primary"
+          : "text-muted-foreground hover:text-foreground"}
+        ${isLast ? "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 rounded-md px-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium" : ""}
+      `;
+    }}
+    onClick={() => setIsMobileMenuOpen(false)}
+  >
+    {item.label}
+  </NavLink>
+)
+}
+)}
+
             </div>
           </div>
         )}
