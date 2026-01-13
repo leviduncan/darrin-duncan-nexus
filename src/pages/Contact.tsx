@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-const WEBHOOK_URL = "/api/email-submission";
+const WEBHOOK_URL = "https://n8n.growclientsai.com/webhook-test/email-submission";
+// const WEBHOOK_URL = "/api/email-submission";
 
 const Contact = () => {
   const { toast } = useToast();
